@@ -6,7 +6,9 @@
 //
 
 import Combine
+import os.log
 import UIKit
+
 public struct ListViewCell {
     public static let cellReuseIdentifier = "UpcomingReuseId"
     public static let cellNibIdentifier = "UpcomingTableCell"
@@ -18,6 +20,7 @@ public struct SliderViewCell {
 }
 
 class ListMoviesViewController: BaseViewController {
+    var searchService: SearchServiceProtocol!
     var viewModel: HomeViewModel!
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var upcomingTableView: UITableView!
@@ -25,10 +28,12 @@ class ListMoviesViewController: BaseViewController {
     private var upcomingCancellables: Set<AnyCancellable> = []
     private var nowPlayingCancellables: Set<AnyCancellable> = []
     let cellRowHeight = 160
-    let queue = DispatchQueue.main
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        searchService = (appDelegate.assembler?.resolver.resolve(SearchServiceProtocol.self))!
 
         // to ignore safe area
         navigationController?.navigationBar.isHidden = true
@@ -50,9 +55,14 @@ class ListMoviesViewController: BaseViewController {
 
         let cellNibSlider = UINib(nibName: SliderViewCell.cellNibIdentifier, bundle: nil)
         nowPlayingSlider.register(cellNibSlider, forCellWithReuseIdentifier: SliderViewCell.cellReuseIdentifier)
-        bindViewModel()
-        viewModel.fetchNowPlaying()
-        viewModel.fetchUpcoming()
+
+        bindViewModelForUpcoming()
+        bindViewModelForNowPlaying()
+        
+        fetchUpcoming()
+
+      
+        //fetchNowPlaying()
     }
 
     override func viewSafeAreaInsetsDidChange() {
@@ -62,7 +72,7 @@ class ListMoviesViewController: BaseViewController {
         nowPlayingSlider.contentInset = insets
     }
 
-    private func bindViewModel() {
+    private func bindViewModelForNowPlaying() {
         viewModel.$nowPlayingMovies
             .receive(on: queue)
             .sink {
@@ -70,8 +80,11 @@ class ListMoviesViewController: BaseViewController {
                 self?.upcomingTableView.reloadData()
             }
             .store(in: &nowPlayingCancellables)
+    }
 
+    private func bindViewModelForUpcoming() {
         viewModel.$upcomingMovies
+            .receive(on: queue)
             .sink { [weak self] _ in
                 self?.nowPlayingSlider.reloadData()
             }
@@ -81,7 +94,7 @@ class ListMoviesViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-        upcomingTableView.reloadData()
+        // upcomingTableView.reloadData()
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -97,6 +110,73 @@ class ListMoviesViewController: BaseViewController {
 
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         pageControl?.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
+
+    var searchCancellableUpcoming: AnyCancellable?
+    var searchCancellableNowPlaying: AnyCancellable?
+    let queue = DispatchQueue.main
+    
+    func fetchUpcoming() {
+        var welcome: Welcome?
+        searchCancellableUpcoming = searchService.getUpcomingMovies()
+            .receive(on: queue)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure:
+                    self.viewModel.upcomingMovies = []
+                case .finished:
+                    let captured = welcome?.results.compactMap { UpcomingViewModel($0) } ?? []
+                    print("captured results")
+                    self.viewModel.upcomingMovies = captured
+                    
+                    self.fetchNowPlaying()
+                }
+
+            }, receiveValue: { data in
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .useDefaultKeys
+                    welcome = try decoder.decode(Welcome.self, from: data)
+
+                    os_log("Success: %s", log: Log.network, type: .default, "Loaded")
+                } catch {
+                    let errorMessage = "\(error)"
+                    os_log("Error: %s", log: Log.data, type: .error, errorMessage)
+                }
+            })
+    }
+
+    func fetchNowPlaying() {
+        var welcome: Welcome?
+        searchCancellableNowPlaying = searchService.getNowPlayingMovies()
+            .receive(on: queue)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure:
+                    self.viewModel.nowPlayingMovies = []
+                case .finished:
+                    guard let item = welcome?.results else {
+                        return
+                    }
+                    if item.count > 3 {
+                        let captured = welcome?.results[0 ..< 3].compactMap { NowPlayingViewModel($0) } ?? []
+                        print("captured nowplaying")
+                        self.viewModel.nowPlayingMovies = captured
+                    }
+                }
+
+            }, receiveValue: { data in
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .useDefaultKeys
+                    welcome = try decoder.decode(Welcome.self, from: data)
+
+                    os_log("Success: %s", log: Log.network, type: .default, "Loaded")
+                } catch {
+                    let errorMessage = "\(error.localizedDescription)"
+                    os_log("Error: %s", log: Log.data, type: .error, errorMessage)
+                }
+            })
     }
 }
 

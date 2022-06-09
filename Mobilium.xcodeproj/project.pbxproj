@@ -80,6 +80,8 @@
 		3826A2B8284E87FD00080D3D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A2B7284E87FD00080D3D /* Result.swift */; };
 		3826A2B9284E87FD00080D3D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A2B7284E87FD00080D3D /* Result.swift */; };
 		3826A2BA284E87FD00080D3D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A2B7284E87FD00080D3D /* Result.swift */; };
+		38890E54285213D5001FC451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A21D284E55FA00080D3D /* AppDelegate.swift */; };
+		38890E55285213D6001FC451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A21D284E55FA00080D3D /* AppDelegate.swift */; };
 		B4527085FD99C8F64FB5B0D9 /* Pods_Mobilium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA03CC901C459A249E16EE3 /* Pods_Mobilium.framework */; };
 		E432A30CA2C780E21B895FA0 /* Pods_MobiliumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333E3BF2CF2EEA376E2D519C /* Pods_MobiliumTests.framework */; };
 /* End PBXBuildFile section */
@@ -624,6 +626,7 @@
 			files = (
 				3826A2B9284E87FD00080D3D /* Result.swift in Sources */,
 				3826A29D284E662100080D3D /* ListMoviesViewModel.swift in Sources */,
+				38890E54285213D5001FC451 /* AppDelegate.swift in Sources */,
 				3826A273284E59EF00080D3D /* MovieDetailsViewController.swift in Sources */,
 				3826A263284E572200080D3D /* ListMoviesViewController.swift in Sources */,
 				3826A253284E56A400080D3D /* Log.swift in Sources */,
@@ -655,6 +658,7 @@
 				3826A23F284E55FB00080D3D /* MobiliumUITests.swift in Sources */,
 				3826A280284E5C1600080D3D /* NowPlayingSliderCell.swift in Sources */,
 				3826A274284E59EF00080D3D /* MovieDetailsViewController.swift in Sources */,
+				38890E55285213D6001FC451 /* AppDelegate.swift in Sources */,
 				3826A29A284E61AC00080D3D /* Welcome.swift in Sources */,
 				3826A2AB284E72D000080D3D /* UpcomingTableCell.swift in Sources */,
 				3826A29E284E662100080D3D /* ListMoviesViewModel.swift in Sources */,

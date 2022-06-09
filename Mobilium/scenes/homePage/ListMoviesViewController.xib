@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,17 +17,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RmG-Qe-1fw">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skO-c2-Ayd" userLabel="View Top">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="227"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6yf-ak-c4q">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="227"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lq5-FH-U7H">
@@ -38,7 +38,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ker-Jn-wmw">
-                                    <rect key="frame" x="10" y="272.5" width="394" height="26"/>
+                                    <rect key="frame" x="10" y="141" width="300" height="26"/>
                                 </pageControl>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -53,17 +53,19 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LoC-Xi-NUO" userLabel="View Bottom">
-                            <rect key="frame" x="0.0" y="358.5" width="414" height="537.5"/>
+                            <rect key="frame" x="0.0" y="227" width="320" height="341"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OhD-qf-vob">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="537.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="341"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="OhD-qf-vob" firstAttribute="centerY" secondItem="LoC-Xi-NUO" secondAttribute="centerY" id="0et-86-nzr"/>
                                 <constraint firstItem="OhD-qf-vob" firstAttribute="leading" secondItem="LoC-Xi-NUO" secondAttribute="leading" id="DAb-gG-fMg"/>
                                 <constraint firstAttribute="bottom" secondItem="OhD-qf-vob" secondAttribute="bottom" id="JDq-1Y-aJb"/>
+                                <constraint firstItem="OhD-qf-vob" firstAttribute="centerX" secondItem="LoC-Xi-NUO" secondAttribute="centerX" id="cdm-TY-4W1"/>
                                 <constraint firstAttribute="trailing" secondItem="OhD-qf-vob" secondAttribute="trailing" id="rTw-vx-8Gl"/>
                                 <constraint firstItem="OhD-qf-vob" firstAttribute="top" secondItem="LoC-Xi-NUO" secondAttribute="top" id="u89-eQ-6Hi"/>
                             </constraints>
