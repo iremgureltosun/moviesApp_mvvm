@@ -1,0 +1,6 @@
+framework module Pods_Mobilium_MobiliumUITests {
+  umbrella header "Pods-Mobilium-MobiliumUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
