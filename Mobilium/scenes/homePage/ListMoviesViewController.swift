@@ -31,7 +31,7 @@ class ListMoviesViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         searchService = (appDelegate.assembler?.resolver.resolve(SearchServiceProtocol.self))!
 
@@ -58,20 +58,13 @@ class ListMoviesViewController: BaseViewController {
 
         bindViewModelForUpcoming()
         bindViewModelForNowPlaying()
-        
+
         fetchUpcoming()
-
-      
-        //fetchNowPlaying()
     }
-
-    override func viewSafeAreaInsetsDidChange() {
-        super.viewSafeAreaInsetsDidChange()
-        var insets = view.safeAreaInsets
-        insets.top = 0
-        nowPlayingSlider.contentInset = insets
+    override func viewDidLayoutSubviews() {
+        myCollectionViewHeight = nowPlayingSlider.bounds.size.height
     }
-
+    
     private func bindViewModelForNowPlaying() {
         viewModel.$nowPlayingMovies
             .receive(on: queue)
@@ -115,7 +108,7 @@ class ListMoviesViewController: BaseViewController {
     var searchCancellableUpcoming: AnyCancellable?
     var searchCancellableNowPlaying: AnyCancellable?
     let queue = DispatchQueue.main
-    
+
     func fetchUpcoming() {
         var welcome: Welcome?
         searchCancellableUpcoming = searchService.getUpcomingMovies()
@@ -128,7 +121,7 @@ class ListMoviesViewController: BaseViewController {
                     let captured = welcome?.results.compactMap { UpcomingViewModel($0) } ?? []
                     print("captured results")
                     self.viewModel.upcomingMovies = captured
-                    
+
                     self.fetchNowPlaying()
                 }
 
@@ -178,6 +171,15 @@ class ListMoviesViewController: BaseViewController {
                 }
             })
     }
+    var myCollectionViewHeight: CGFloat = 0.0 {
+        didSet {
+            if myCollectionViewHeight != oldValue {
+                nowPlayingSlider.collectionViewLayout.invalidateLayout()
+                nowPlayingSlider.collectionViewLayout.prepare()
+            }
+        }
+    }
+
 }
 
 // MARK: - Collection View
