@@ -1,37 +1,24 @@
 //
-//  MovieSearchEndPoint.swift
+//  SearchEndPoint.swift
 //  Mobilium
 //
-//  Created by irem TOSUN on 6.06.2022.
+//  Created by irem TOSUN on 14.06.2022.
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
-
-public enum SearchType {
-    case getUpcoming
-    case getNowPlaying
-    
-    public var path: String {
-        switch self {
-        case .getUpcoming:
-            return "\(Constants.Network.upcomingPath)\(Constants.Network.apiKEY)\(Constants.Network.endPath)"
-        case .getNowPlaying:
-            return "\(Constants.Network.nowPlayingPath)\(Constants.Network.apiKEY)\(Constants.Network.endPath)"
-        }
-    }
-}
-
-struct MovieSearchEndpoint {
+struct SearchEndpoint {
     var searchType: SearchType
-    
+
     public var baseURL: URL {
         return URL(string: "\(Constants.Network.baseUrlPath)")!
     }
-    init(searchType: SearchType){
+
+    init(searchType: SearchType) {
         self.searchType = searchType
     }
-   
 
     public var method: String {
         return "GET"
@@ -42,7 +29,7 @@ struct MovieSearchEndpoint {
     }
 }
 
-extension MovieSearchEndpoint {
+extension SearchEndpoint {
     private func searchByURL() -> URL {
         let urlString = baseURL.absoluteString + searchType.path
         guard let url = URL(string: urlString) else {
@@ -50,6 +37,7 @@ extension MovieSearchEndpoint {
         }
         return url
     }
+
     public func getUrlRequest() -> URLRequest {
         let url = searchByURL()
         var request = URLRequest(url: url)
@@ -57,6 +45,4 @@ extension MovieSearchEndpoint {
         request.allHTTPHeaderFields = headers
         return request
     }
-    
 }
-

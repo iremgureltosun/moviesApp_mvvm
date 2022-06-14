@@ -47,9 +47,9 @@
 		3826A287284E5CD900080D3D /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A286284E5CD900080D3D /* SearchService.swift */; };
 		3826A288284E5CD900080D3D /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A286284E5CD900080D3D /* SearchService.swift */; };
 		3826A289284E5CDA00080D3D /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A286284E5CD900080D3D /* SearchService.swift */; };
-		3826A28B284E5D0B00080D3D /* MovieSearchEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A28A284E5D0B00080D3D /* MovieSearchEndPoint.swift */; };
-		3826A28C284E5D0B00080D3D /* MovieSearchEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A28A284E5D0B00080D3D /* MovieSearchEndPoint.swift */; };
-		3826A28D284E5D0B00080D3D /* MovieSearchEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A28A284E5D0B00080D3D /* MovieSearchEndPoint.swift */; };
+		3826A28B284E5D0B00080D3D /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A28A284E5D0B00080D3D /* SearchType.swift */; };
+		3826A28C284E5D0B00080D3D /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A28A284E5D0B00080D3D /* SearchType.swift */; };
+		3826A28D284E5D0B00080D3D /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A28A284E5D0B00080D3D /* SearchType.swift */; };
 		3826A28F284E5D1B00080D3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A28E284E5D1B00080D3D /* Constants.swift */; };
 		3826A290284E5D1B00080D3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A28E284E5D1B00080D3D /* Constants.swift */; };
 		3826A291284E5D1B00080D3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A28E284E5D1B00080D3D /* Constants.swift */; };
@@ -82,6 +82,15 @@
 		3826A2BA284E87FD00080D3D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A2B7284E87FD00080D3D /* Result.swift */; };
 		38890E54285213D5001FC451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A21D284E55FA00080D3D /* AppDelegate.swift */; };
 		38890E55285213D6001FC451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826A21D284E55FA00080D3D /* AppDelegate.swift */; };
+		38993FB9285879D3001F6800 /* SearchEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38993FB8285879D3001F6800 /* SearchEndPoint.swift */; };
+		38993FBA285879D3001F6800 /* SearchEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38993FB8285879D3001F6800 /* SearchEndPoint.swift */; };
+		38993FBB285879D3001F6800 /* SearchEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38993FB8285879D3001F6800 /* SearchEndPoint.swift */; };
+		38993FBD28587B9F001F6800 /* RequestObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38993FBC28587B9F001F6800 /* RequestObservable.swift */; };
+		38993FBE28587B9F001F6800 /* RequestObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38993FBC28587B9F001F6800 /* RequestObservable.swift */; };
+		38993FBF28587B9F001F6800 /* RequestObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38993FBC28587B9F001F6800 /* RequestObservable.swift */; };
+		38993FC128587BEA001F6800 /* HttpStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38993FC028587BEA001F6800 /* HttpStatusCodes.swift */; };
+		38993FC228587BEA001F6800 /* HttpStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38993FC028587BEA001F6800 /* HttpStatusCodes.swift */; };
+		38993FC328587BEA001F6800 /* HttpStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38993FC028587BEA001F6800 /* HttpStatusCodes.swift */; };
 		B4527085FD99C8F64FB5B0D9 /* Pods_Mobilium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA03CC901C459A249E16EE3 /* Pods_Mobilium.framework */; };
 		E432A30CA2C780E21B895FA0 /* Pods_MobiliumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333E3BF2CF2EEA376E2D519C /* Pods_MobiliumTests.framework */; };
 /* End PBXBuildFile section */
@@ -130,7 +139,7 @@
 		3826A27C284E5C1600080D3D /* NowPlayingSliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingSliderCell.swift; sourceTree = "<group>"; };
 		3826A27D284E5C1600080D3D /* NowPlayingSliderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NowPlayingSliderCell.xib; sourceTree = "<group>"; };
 		3826A286284E5CD900080D3D /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
-		3826A28A284E5D0B00080D3D /* MovieSearchEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchEndPoint.swift; sourceTree = "<group>"; };
+		3826A28A284E5D0B00080D3D /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
 		3826A28E284E5D1B00080D3D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3826A292284E60C400080D3D /* ServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAssembly.swift; sourceTree = "<group>"; };
 		3826A297284E61AC00080D3D /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
@@ -141,6 +150,9 @@
 		3826A2A8284E72D000080D3D /* UpcomingTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingTableCell.xib; sourceTree = "<group>"; };
 		3826A2AF284E770900080D3D /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		3826A2B7284E87FD00080D3D /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		38993FB8285879D3001F6800 /* SearchEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndPoint.swift; sourceTree = "<group>"; };
+		38993FBC28587B9F001F6800 /* RequestObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestObservable.swift; sourceTree = "<group>"; };
+		38993FC028587BEA001F6800 /* HttpStatusCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCodes.swift; sourceTree = "<group>"; };
 		52814E26A06A5790428D3515 /* Pods-MobiliumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobiliumTests.debug.xcconfig"; path = "Target Support Files/Pods-MobiliumTests/Pods-MobiliumTests.debug.xcconfig"; sourceTree = "<group>"; };
 		60CFD5F64486F8DF1FBD9770 /* Pods-Mobilium.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobilium.debug.xcconfig"; path = "Target Support Files/Pods-Mobilium/Pods-Mobilium.debug.xcconfig"; sourceTree = "<group>"; };
 		7407B9EB7F937680ACC3F684 /* Pods-Mobilium.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobilium.release.xcconfig"; path = "Target Support Files/Pods-Mobilium/Pods-Mobilium.release.xcconfig"; sourceTree = "<group>"; };
@@ -309,7 +321,6 @@
 			children = (
 				3826A296284E616000080D3D /* models */,
 				3826A286284E5CD900080D3D /* SearchService.swift */,
-				3826A28A284E5D0B00080D3D /* MovieSearchEndPoint.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -317,8 +328,12 @@
 		3826A296284E616000080D3D /* models */ = {
 			isa = PBXGroup;
 			children = (
+				38993FB8285879D3001F6800 /* SearchEndPoint.swift */,
+				3826A28A284E5D0B00080D3D /* SearchType.swift */,
 				3826A297284E61AC00080D3D /* Welcome.swift */,
 				3826A2B7284E87FD00080D3D /* Result.swift */,
+				38993FBC28587B9F001F6800 /* RequestObservable.swift */,
+				38993FC028587BEA001F6800 /* HttpStatusCodes.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -600,6 +615,7 @@
 				3826A222284E55FA00080D3D /* ViewController.swift in Sources */,
 				3826A293284E60C400080D3D /* ServiceAssembly.swift in Sources */,
 				3826A2A9284E72D000080D3D /* UpcomingTableCell.swift in Sources */,
+				38993FB9285879D3001F6800 /* SearchEndPoint.swift in Sources */,
 				3826A21E284E55FA00080D3D /* AppDelegate.swift in Sources */,
 				3826A27E284E5C1600080D3D /* NowPlayingSliderCell.swift in Sources */,
 				3826A269284E57C700080D3D /* UIViewController+.swift in Sources */,
@@ -610,10 +626,12 @@
 				3826A298284E61AC00080D3D /* Welcome.swift in Sources */,
 				3826A252284E56A400080D3D /* Log.swift in Sources */,
 				3826A279284E5A0800080D3D /* BaseViewController.swift in Sources */,
+				38993FBD28587B9F001F6800 /* RequestObservable.swift in Sources */,
 				3826A287284E5CD900080D3D /* SearchService.swift in Sources */,
 				3826A262284E572200080D3D /* ListMoviesViewController.swift in Sources */,
 				3826A220284E55FA00080D3D /* SceneDelegate.swift in Sources */,
-				3826A28B284E5D0B00080D3D /* MovieSearchEndPoint.swift in Sources */,
+				38993FC128587BEA001F6800 /* HttpStatusCodes.swift in Sources */,
+				3826A28B284E5D0B00080D3D /* SearchType.swift in Sources */,
 				3826A2A4284E682E00080D3D /* String+.swift in Sources */,
 				3826A28F284E5D1B00080D3D /* Constants.swift in Sources */,
 				3826A2A0284E682300080D3D /* Date+.swift in Sources */,
@@ -626,6 +644,7 @@
 			files = (
 				3826A2B9284E87FD00080D3D /* Result.swift in Sources */,
 				3826A29D284E662100080D3D /* ListMoviesViewModel.swift in Sources */,
+				38993FBA285879D3001F6800 /* SearchEndPoint.swift in Sources */,
 				38890E54285213D5001FC451 /* AppDelegate.swift in Sources */,
 				3826A273284E59EF00080D3D /* MovieDetailsViewController.swift in Sources */,
 				3826A263284E572200080D3D /* ListMoviesViewController.swift in Sources */,
@@ -635,12 +654,14 @@
 				3826A2B1284E770900080D3D /* UIImageView+.swift in Sources */,
 				3826A26A284E57C700080D3D /* UIViewController+.swift in Sources */,
 				3826A2A5284E682E00080D3D /* String+.swift in Sources */,
+				38993FBE28587B9F001F6800 /* RequestObservable.swift in Sources */,
 				3826A2A1284E682300080D3D /* Date+.swift in Sources */,
 				3826A290284E5D1B00080D3D /* Constants.swift in Sources */,
 				3826A288284E5CD900080D3D /* SearchService.swift in Sources */,
 				3826A294284E60C400080D3D /* ServiceAssembly.swift in Sources */,
 				3826A2AA284E72D000080D3D /* UpcomingTableCell.swift in Sources */,
-				3826A28C284E5D0B00080D3D /* MovieSearchEndPoint.swift in Sources */,
+				38993FC228587BEA001F6800 /* HttpStatusCodes.swift in Sources */,
+				3826A28C284E5D0B00080D3D /* SearchType.swift in Sources */,
 				3826A235284E55FB00080D3D /* MobiliumTests.swift in Sources */,
 				3826A27A284E5A0800080D3D /* BaseViewController.swift in Sources */,
 			);
@@ -653,6 +674,7 @@
 				3826A2B2284E770900080D3D /* UIImageView+.swift in Sources */,
 				3826A289284E5CDA00080D3D /* SearchService.swift in Sources */,
 				3826A2BA284E87FD00080D3D /* Result.swift in Sources */,
+				38993FBB285879D3001F6800 /* SearchEndPoint.swift in Sources */,
 				3826A291284E5D1B00080D3D /* Constants.swift in Sources */,
 				3826A241284E55FB00080D3D /* MobiliumUITestsLaunchTests.swift in Sources */,
 				3826A23F284E55FB00080D3D /* MobiliumUITests.swift in Sources */,
@@ -663,13 +685,15 @@
 				3826A2AB284E72D000080D3D /* UpcomingTableCell.swift in Sources */,
 				3826A29E284E662100080D3D /* ListMoviesViewModel.swift in Sources */,
 				3826A26B284E57C700080D3D /* UIViewController+.swift in Sources */,
+				38993FBF28587B9F001F6800 /* RequestObservable.swift in Sources */,
 				3826A254284E56A400080D3D /* Log.swift in Sources */,
 				3826A2A6284E682E00080D3D /* String+.swift in Sources */,
 				3826A27B284E5A0800080D3D /* BaseViewController.swift in Sources */,
+				38993FC328587BEA001F6800 /* HttpStatusCodes.swift in Sources */,
 				3826A295284E60C400080D3D /* ServiceAssembly.swift in Sources */,
 				3826A2A2284E682300080D3D /* Date+.swift in Sources */,
 				3826A264284E572200080D3D /* ListMoviesViewController.swift in Sources */,
-				3826A28D284E5D0B00080D3D /* MovieSearchEndPoint.swift in Sources */,
+				3826A28D284E5D0B00080D3D /* SearchType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,9 @@ target 'Mobilium' do
 
   # Pods for Mobilium
  pod 'Swinject'
+ pod 'RxCocoa'
+ pod 'RxSwift'
+ 
   target 'MobiliumTests' do
     inherit! :search_paths
     # Pods for testing

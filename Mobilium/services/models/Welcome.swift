@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Welcome
 
-struct Welcome: Codable {
+public struct Welcome: Codable {
     let dates: Dates
     let page: Int
     let results: [Result]
